@@ -22,8 +22,8 @@ pipeline{
             }
         }
 
-        stage('Testing-app') {
-            steps{
+        stage('Test') {
+            steps {
                 echo 'Testing Stage man'
             }
         }
