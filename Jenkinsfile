@@ -13,9 +13,9 @@ pipeline{
             
             steps {
                 sh '''
+                    echo 'executing Tests...'
                     test -f build/index.html
                     npm test
-                    echo 'test successful'
                 '''
             }
         }
@@ -41,6 +41,11 @@ pipeline{
         }
     }
 
+    post {
+         always {
+            junit 'test-results/junt.xml'
+         }
+    }
 
        
 }
